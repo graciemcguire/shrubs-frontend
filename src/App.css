@@ -1,5 +1,11 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -7,26 +13,35 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.plant-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: blue;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 66%;
 }
 
-.App-link {
-  color: #61dafb;
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-basis: auto;
+  width: 500px;
+  background-color: red;
+  height: 500px;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.plant-card-images {
+  width: 100%;
+  height: 100%;
+}
+
+.box-container {
+  width: 33%;
+  display: flex;
+  background-color: green;
+  justify-content: center;
 }

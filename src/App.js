@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PlantContainer from './Containers/PlantContainer'
+import BoxContainer from './Containers/BoxContainer'
 
 class App extends Component {
+  state = {
+    plants: []
+  }
+
+  componentDidMount = () => {
+    fetch('http://localhost:4000/api/v1/plants')
+    .then(r => r.json())
+    .then(plants => this.setState({
+      plants: plants
+    }))
+  }
+
   render() {
+    // console.log(this.state)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <PlantContainer plants={this.state.plants}/>
+        <BoxContainer plants={this.state.plants}/>
       </div>
     );
   }
