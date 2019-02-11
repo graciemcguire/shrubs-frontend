@@ -5,7 +5,8 @@ import BoxContainer from './Containers/BoxContainer'
 
 class App extends Component {
   state = {
-    plants: []
+    plants: [],
+    favPlants: []
   }
 
   componentDidMount = () => {
@@ -16,12 +17,33 @@ class App extends Component {
     }))
   }
 
+  addToBox = plantObj => {
+    console.log(plantObj)
+    let setFavPlants = [ ...this.state.favPlants, plantObj ]
+    if(!this.state.favPlants.includes(plantObj) && this.state.favPlants.length < 4){
+    this.setState({
+      favPlants: setFavPlants
+    })
+  }
+}
+  removeFromBox = plantObj => {
+    let updateFav = this.state.favPlants.filter( plant =>
+      plant.id !== plantObj.id)
+      this.setState({
+        favPlants: updateFav
+      })
+  }
+
   render() {
-    // console.log(this.state)
+    console.log('favs', this.state.favPlants);
     return (
       <div className="App">
-        <PlantContainer plants={this.state.plants}/>
-        <BoxContainer plants={this.state.plants}/>
+        <PlantContainer
+          plants={this.state.plants}
+          clickHandler = {this.addToBox}/>
+        <BoxContainer
+          plants={this.state.favPlants}
+          clickHandler={this.removeFromBox}/>
       </div>
     );
   }
