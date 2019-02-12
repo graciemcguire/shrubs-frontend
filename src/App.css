@@ -1,11 +1,13 @@
 body, html {
   margin: 0;
   padding: 0;
+
 }
 
 .App {
   text-align: center;
   display: flex;
+  background-color: #F4F4F4;
 }
 
 .App-logo {
@@ -13,11 +15,32 @@ body, html {
   height: 40vmin;
 }
 
+.main {
+  background-color: #F4F4F4;
+}
+.header-class {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #F4F4F4;
+  align-items: center;
+  justify-content: center;
+  font-size: 250%
+
+}
+
+
+
+/* .logo-type {
+
+  text-size: 40px;
+} */
+
 .plant-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: #F4F4F4;
   align-items: center;
   justify-content: center;
   width: 66%;
@@ -29,11 +52,26 @@ body, html {
   flex-wrap: wrap;
   flex-basis: auto;
   width: 500px;
-  background-color: white;
+  background-color: ##F1F1F1;
   height: 500px;
   margin: 10px;
 }
 
+.search-container {
+  display: flex;
+  background-color: #EAEAEA;
+  align-items: center;
+  justify-content: center;
+  position: right;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 10px;
+}
+
+.btn {
+  padding: 5px;
+  margin: 3px;
+}
 .plant-card-images {
   width: 100%;
   height: 65%;
@@ -43,6 +81,10 @@ body, html {
   width: 33%;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  align-items: center
+  background-color: #EAEAEA;
+  align-items: center;
+  /* position: fixed;
+  right: 5px;
+  bottom: 30px;
+  top: 10px */
 }

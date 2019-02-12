@@ -11,6 +11,7 @@ export default class BoxContainer extends Component {
           clickHandler={this.props.clickHandler}
           className="sub-box"
           />
+          
     ))}
   }
 
@@ -18,9 +19,10 @@ export default class BoxContainer extends Component {
     // console.log('rn', this.props.plants);
     return (
       <div className="box-container">
-        <h1>Subscription Box</h1>
+        <h1>My Box</h1>
         { this.mappedPlants() }
-
+        <button className='btn'>Check Out</button>
+        <button className='btn'>Save For Later?</button>
       </div>
     )
   }
