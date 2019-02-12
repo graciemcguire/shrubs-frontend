@@ -9,18 +9,18 @@ export default class BoxContainer extends Component {
         <PlantCard key={plant.id}
           plant={plant}
           clickHandler={this.props.clickHandler}
+          className="sub-box"
           />
     ))}
   }
 
   render(){
-    console.log('rn', this.props.plants);
+    // console.log('rn', this.props.plants);
     return (
       <div className="box-container">
-        <h1>BoxContainer</h1>
+        <h1>Subscription Box</h1>
         { this.mappedPlants() }
 
-        <button>Edit Box</button>
       </div>
     )
   }
